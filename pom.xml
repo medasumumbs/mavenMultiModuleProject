@@ -1,0 +1,32 @@
+<project>
+<modelVersion>4.0.0</modelVersion>
+<groupId>ru.yandex</groupId>
+<artifactId>maven-test-project</artifactId>
+<version>1.0-SNAPSHOT</version>
+<packaging>pom</packaging> <!-- Родительский проект -->
+ <properties>
+  <buildDirectory>${project.basedir}/target</buildDirectory>
+ </properties>
+<modules> <!-- Перечисление модулей проекта -->
+<module>model</module>
+<module>service</module>
+</modules>
+ <profiles>
+  <profile>
+   <id>otherOutputDir</id>
+   <build>
+    <directory>${buildDirectory}</directory>
+   </build>
+  </profile>
+ </profiles>
+
+  <repositories>
+   <repository>
+    <id>ru.yandex</id>
+    <url>${buildDirectory}</url>
+    <!-- You may need to include authentication information here if required -->
+   </repository>
+  </repositories>
+
+
+</project>
